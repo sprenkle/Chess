@@ -20,6 +20,7 @@ public class Bishop extends ChessPiece {
 
     public Bishop(int color, int x, int y) throws InvalidLocationException {
         super(color, x, y);
+        name = name + "B";
     }
 
     @Override

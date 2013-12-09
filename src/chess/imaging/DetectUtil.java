@@ -25,10 +25,14 @@ import boofcv.struct.image.ImageFloat32;
 import boofcv.struct.image.ImageSInt16;
 import boofcv.struct.image.ImageSingleBand;
 import boofcv.struct.image.ImageUInt8;
+import chess.pieces.ChessPiece;
 import georegression.struct.line.LineParametric2D_F32;
 import georegression.struct.line.LineSegment2D_F32;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import static java.lang.Math.abs;
 import java.util.ArrayList;
@@ -48,7 +52,7 @@ public class DetectUtil {
 
     public static void drawLine(LineParametric2D_F32 line, BufferedImage image) {
 
-      //  if(line.getPointOnLine(edgeThreshold))
+        //  if(line.getPointOnLine(edgeThreshold))
         for (int x = 0; x < image.getWidth(); x++) {
             int y = (int) (line.getPointOnLine(x).y);
             if (y >= 0 && y < image.getHeight()) {
@@ -59,26 +63,26 @@ public class DetectUtil {
 
     public static int getAvgDiff(BufferedImage bi, int x, int y, int width, int height) {
         int sum = 0;
-        try{
-        ArrayList<Integer> diffList = new ArrayList<>();
-        for (int w = x; w < width; w++) {
-            for (int h = y; h < height; h++) {
-                Color prevColor = new Color(bi.getRGB(x - 1, y));
-                Color color = new Color(bi.getRGB(w, h));
+        try {
+            ArrayList<Integer> diffList = new ArrayList<>();
+            for (int w = x; w < width; w++) {
+                for (int h = y; h < height; h++) {
+                    Color prevColor = new Color(bi.getRGB(x - 1, y));
+                    Color color = new Color(bi.getRGB(w, h));
 
-                int diff = abs(prevColor.getRed() - color.getRed()) + abs(prevColor.getGreen() - color.getGreen()) + abs(prevColor.getBlue() - color.getBlue());
-                diffList.add(diff);
+                    int diff = abs(prevColor.getRed() - color.getRed()) + abs(prevColor.getGreen() - color.getGreen()) + abs(prevColor.getBlue() - color.getBlue());
+                    diffList.add(diff);
+                }
             }
-        }
 
-        Collections.sort(diffList);
-        int quarter = diffList.size() / 4;
+            Collections.sort(diffList);
+            int quarter = diffList.size() / 4;
 
-        for (int i = quarter; i < quarter * 2; i++) {
-            sum += diffList.get(i);
-        }
+            for (int i = quarter; i < quarter * 2; i++) {
+                sum += diffList.get(i);
+            }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             sum = -1;
         }
         return sum;
@@ -178,22 +182,46 @@ public class DetectUtil {
         int yl = bd.getSquare(x, y).y + bd.getSquare(x, y).height;
         for (int x1 = xs; x1 < xl; x1++) {
             for (int y1 = ys; y1 < yl; y1++) {
-                bi.setRGB(x1, y1, 0xFFFFFF);
+                if (DetectUtil.whiteSquare(x, y)) {
+                    bi.setRGB(x1, y1, 0x00000000);
+                } else {
+                    bi.setRGB(x1, y1, 0xFFFFFF);
+                }
             }
         }
     }
-    
+
+    public static void displaySquare(ChessPiece cp, BoardDetails bd, int x, int y, BufferedImage bi) {
+        try {
+            int xs = bd.getSquare(x, y).x;
+            int ys = bd.getSquare(x, y).y;
+
+            displayText(bi, cp.getName(), xs, ys);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void displayText(BufferedImage old, String s, int x, int y) {
+        Graphics2D g2d = old.createGraphics();
+        g2d.drawImage(old, 0, 0, null);
+        g2d.setPaint(Color.red);
+        g2d.setFont(new Font("Serif", Font.BOLD, 20));
+        FontMetrics fm = g2d.getFontMetrics();
+        g2d.drawString(s, x, y + 15);
+        g2d.dispose();
+    }
+
     public static BufferedImage histogram(BufferedImage buffered) {
-		ImageUInt8 gray = ConvertBufferedImage.convertFrom(buffered,(ImageUInt8)null);
-		ImageUInt8 adjusted = new ImageUInt8(gray.width, gray.height);
- 
-		int histogram[] = new int[256];
-		int transform[] = new int[256];
- 
- 
-		ImageStatistics.histogram(gray,histogram);
-		EnhanceImageOps.equalize(histogram, transform);
-		EnhanceImageOps.applyTransform(gray, transform, adjusted);
+        ImageUInt8 gray = ConvertBufferedImage.convertFrom(buffered, (ImageUInt8) null);
+        ImageUInt8 adjusted = new ImageUInt8(gray.width, gray.height);
+
+        int histogram[] = new int[256];
+        int transform[] = new int[256];
+
+        ImageStatistics.histogram(gray, histogram);
+        EnhanceImageOps.equalize(histogram, transform);
+        EnhanceImageOps.applyTransform(gray, transform, adjusted);
 //		panel.addImage(ConvertBufferedImage.convertTo(adjusted,null),"Global");
 // 
 //		EnhanceImageOps.equalizeLocal(gray, 50, adjusted, histogram, transform);
@@ -203,14 +231,14 @@ public class DetectUtil {
 // 
 //		panel.setPreferredSize(new Dimension(gray.width,gray.height));
 //		ShowImages.showWindow(panel,"Histogram");
-                return ConvertBufferedImage.convertTo(adjusted,null);
-	}
+        return ConvertBufferedImage.convertTo(adjusted, null);
+    }
 
-    public static boolean whiteSquare(int x, int y){
-        if(y % 2 == 0){
-            return x%2 == 0;
-        }else{
-            return x%2 != 0;
+    public static boolean whiteSquare(int x, int y) {
+        if (y % 2 == 0) {
+            return x % 2 == 0;
+        } else {
+            return x % 2 != 0;
         }
     }
 

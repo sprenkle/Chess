@@ -17,6 +17,8 @@ public class Queen extends ChessPiece {
 
     public Queen(int color, int x, int y) throws InvalidLocationException {
         super(color, x, y);
+        name = name + "Q";
+
     }
 
     @Override

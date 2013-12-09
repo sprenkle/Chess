@@ -19,6 +19,7 @@ public class Pawn extends ChessPiece{
 
     public Pawn(int color, int x, int y) throws InvalidLocationException {
         super(color, x, y);
+        name = name + "P";
     }
 
     @Override

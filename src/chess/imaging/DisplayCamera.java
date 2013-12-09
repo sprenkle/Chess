@@ -4,8 +4,11 @@ import boofcv.abst.calib.ConfigChessboard;
 import boofcv.abst.calib.PlanarCalibrationDetector;
 import boofcv.alg.feature.detect.edge.CannyEdge;
 import boofcv.alg.feature.detect.edge.EdgeContour;
+import boofcv.alg.feature.shapes.ShapeFittingOps;
 import boofcv.alg.filter.binary.BinaryImageOps;
 import boofcv.alg.filter.binary.Contour;
+import boofcv.alg.filter.binary.ThresholdImageOps;
+import boofcv.alg.misc.ImageStatistics;
 import boofcv.core.image.ConvertBufferedImage;
 import boofcv.factory.calib.FactoryPlanarCalibrationTarget;
 import boofcv.factory.feature.detect.edge.FactoryEdgeDetectors;
@@ -26,6 +29,7 @@ import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.github.sarxos.webcam.util.jh.JHGrayFilter;
 import georegression.struct.point.Point2D_F64;
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.ColorModel;
@@ -41,7 +45,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ReadBoardDetails implements WebcamImageTransformer {
+public class DisplayCamera implements WebcamImageTransformer {
 
     private static final JHGrayFilter GRAY = new JHGrayFilter();
     double[][][] ar;
@@ -56,15 +60,19 @@ public class ReadBoardDetails implements WebcamImageTransformer {
         BufferedImage bi = new BufferedImage(cm, raster, isAlphaPremultiplied, null);
 
         ImageUInt8 gray = ConvertBufferedImage.convertFrom(bi, (ImageUInt8) null);
+      
         ImageUInt8 edgeImage = new ImageUInt8(gray.width, gray.height);
+        
+        ImageFloat32 img = ConvertBufferedImage.convertFrom(bi, (ImageFloat32) null);
 
         // Create a canny edge detector which will dynamically compute the threshold based on maximum edge intensity
         // It has also been configured to save the trace as a graph.  This is the graph created while performing
         // hysteresis thresholding.                                          2
-        CannyEdge<ImageUInt8, ImageSInt16> canny = FactoryEdgeDetectors.canny(2, true, true, ImageUInt8.class, ImageSInt16.class);
+        CannyEdge<ImageFloat32, ImageFloat32> canny = FactoryEdgeDetectors.canny(2, true, true, ImageFloat32.class, ImageFloat32.class);
 
         // The edge image is actually an optional parameter.  If you don't need it just pass in null
-        canny.process(gray, 0.1f, 0.5f, edgeImage);
+        canny.process(img, 0.1f, 0.9f, edgeImage);
+        
 
         // First get the contour created by canny
         List<EdgeContour> edgeContours = canny.getContours();
@@ -76,45 +84,23 @@ public class ReadBoardDetails implements WebcamImageTransformer {
         // display the results
         BufferedImage visualBinary = VisualizeBinaryData.renderBinary(edgeImage, null);
 
-        if (!savedBoard) {
+//        if (!savedBoard) {
             cbi = new ChessBoardImage();
 
             cbi.CalcCorners(visualBinary);
-        }
+//        }
 
-//        double[][][] averages = new double[8][8][3];
-        int[][] diff = new int[8][8];
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
-                int[] loc = cbi.getAvgSquareLocation(x, y);
-                diff[x][y] = DetectUtil.getAvgDiff(bi, loc[0], loc[1], loc[2], loc[3]);
-//                averages[x][y] = cbi.getAvgSquare(x, y, bi);
-                DetectUtil.displaySquare(cbi.getBoardDetails(), x, y, bi);
+               DetectUtil.displaySquare(cbi.getBoardDetails(), x, y, bi);
             }
         }
 
-        if (!savedBoard) {
-            savedBoard = true;
-            BoardDetails bd = cbi.getBoardDetails();
 
-  //          bd.setValues(averages);
-            bd.setDiffValues(diff);
-            FileOutputStream fout;
-            try {
-                fout = new FileOutputStream("C:\\dev\\Chess\\Chess\\boardDetail.ser");
-                ObjectOutputStream oos = new ObjectOutputStream(fout);
-                oos.writeObject(bd);
-                oos.close();
-                fout.close();
-            } catch (Exception ex) {
-                Logger.getLogger(ChessPlayDialog.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-        return bi;
+        return visualBinary;
     }
 
-    public ReadBoardDetails() {
+    public DisplayCamera() {
 
         Webcam webcam = Webcam.getDefault();
         webcam.setViewSize(WebcamResolution.VGA.getSize());
@@ -134,7 +120,29 @@ public class ReadBoardDetails implements WebcamImageTransformer {
     }
 
     public static void main(String[] args) {
-        new ReadBoardDetails();
+        new DisplayCamera();
     }
+    
+    	/**
+	 * Fits polygons to found contours around binary blobs.
+	 */
+//	public BufferedImage void fitBinaryImage(ImageFloat32 input) {
+// 
+//		ImageUInt8 binary = new ImageUInt8(input.width,input.height);
+//		BufferedImage polygon = new BufferedImage(input.width,input.height,BufferedImage.TYPE_INT_RGB);
+// 
+//		// the mean pixel value is often a reasonable threshold when creating a binary image
+//		double mean = ImageStatistics.mean(input);
+// 
+//		// create a binary image by thresholding
+//		ThresholdImageOps.threshold(input, binary, (float) mean, true);
+// 
+//		// reduce noise with some filtering
+//		ImageUInt8 filtered = BinaryImageOps.erode8(binary,null);
+//		filtered = BinaryImageOps.dilate8(filtered, null);
+// 
+// 
+//                return ;
+//	}
 
 }

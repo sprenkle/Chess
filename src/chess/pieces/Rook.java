@@ -18,6 +18,7 @@ public class Rook  extends ChessPiece{
 
     public Rook(int color, int x, int y) throws InvalidLocationException {
         super(color, x, y);
+        name = name + "R";
     }
 
 

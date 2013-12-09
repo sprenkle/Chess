@@ -12,6 +12,10 @@ import com.github.sarxos.webcam.WebcamLock;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.github.sarxos.webcam.util.jh.JHGrayFilter;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 import java.io.FileInputStream;
@@ -22,9 +26,12 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class ChessPlayDialog implements WebcamImageTransformer {
-    BoardDetails boardDetails;
-    ChessBoardImage cbi;
-    ChessEngine engine;
+
+    private BoardDetails boardDetails;
+    private ChessBoardImage cbi;
+    private ChessEngine engine;
+    private double[][] lastMoveValues;
+    private int boardSameCount = 0;
 
     @Override
     public BufferedImage transform(BufferedImage orig) {
@@ -34,35 +41,33 @@ public class ChessPlayDialog implements WebcamImageTransformer {
         BufferedImage bi = new BufferedImage(cm, raster, isAlphaPremultiplied, null);
 
         ArrayList<SquareValue> diffList = new ArrayList<>();
-        
+
+        ArrayList<SquareValue> whiteList = new ArrayList<>();
+        ArrayList<SquareValue> blackList = new ArrayList<>();
+
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
-                diffList.add(new SquareValue(x,y, cbi.getDiffSquare(x, y, bi)));
+                diffList.add(new SquareValue(x, y, cbi.getDiffSquare(x, y, bi)));
             }
         }
-        
-       Collections.sort(diffList, new Comparator<SquareValue>(){
+
+        Collections.sort(diffList, new Comparator<SquareValue>() {
             @Override
-            public int compare(SquareValue v1, SquareValue v2){
+            public int compare(SquareValue v1, SquareValue v2) {
                 return Double.compare(v2.value, v1.value);
             }
         });
-       
-        for(int i = 0 ; i < 32 ; i++){
-            SquareValue diffValue = diffList.get(i);
-            DetectUtil.displaySquare(boardDetails, diffValue.x, diffValue.y, bi);
-        }
-        
-        CheckForMove(diffList);
-        
+
+        CheckForMove(diffList, bi);
+
         return bi;
     }
 
     public ChessPlayDialog() {
         String filename = "C:\\dev\\Chess\\Chess\\boardDetail.ser";
 
-        FileInputStream fis ;
-        ObjectInputStream in ;
+        FileInputStream fis;
+        ObjectInputStream in;
 
         try {
             fis = new FileInputStream(filename);
@@ -76,10 +81,10 @@ public class ChessPlayDialog implements WebcamImageTransformer {
         cbi = new ChessBoardImage(boardDetails.getTop(), boardDetails.getBottom(), boardDetails.getLeft(), boardDetails.getRight(), boardDetails.getSquareWidth(), boardDetails.getSquareHeight());
 
         Webcam webcam = Webcam.getDefault();
-        
+
         webcam.setViewSize(WebcamResolution.VGA.getSize());
         webcam.setImageTransformer(this);
-        
+
         webcam.open();
 
         JFrame window = new JFrame("Test Transformer");
@@ -92,7 +97,7 @@ public class ChessPlayDialog implements WebcamImageTransformer {
         window.pack();
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         engine = new ChessEngine(new StockFishUCI());
         engine.newGame();
     }
@@ -100,22 +105,39 @@ public class ChessPlayDialog implements WebcamImageTransformer {
     public static void main(String[] args) {
         new ChessPlayDialog();
     }
-    
-    private void CheckForMove(ArrayList<SquareValue> diffList){
+
+    private void CheckForMove(ArrayList<SquareValue> diffList, BufferedImage bi) {
         Board board = engine.getBoard();
         SquareValue emptySquare = null;
         ArrayList<ChessPiece>[] activePieces = board.getActivePieces();
-        
-        for(int i = 0; i < activePieces[0].size() + activePieces[1].size(); i++){
+
+        boolean matched = true;
+        for (int i = 0; i < activePieces[0].size() + activePieces[1].size(); i++) {
             SquareValue sv = diffList.get(i);
             ChessPiece cp = board.getPiece(sv.x, sv.y);
-            if(cp == null){
-                if(emptySquare == null){
-                    emptySquare = sv;
-                }
-                System.out.println("Piece Moved");
+
+            if (cp != null) {
+               // DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+            } else {
+                matched = false;
+                boardSameCount = 0;
             }
         }
+
+        if (matched) {
+            boardSameCount++;
+        }
+
+        if (matched) {
+            for (int i = 0; i < activePieces[0].size() + activePieces[1].size(); i++) {
+                SquareValue sv = diffList.get(i);
+                ChessPiece cp = board.getPiece(sv.x, sv.y);
+
+                DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+                boardSameCount = 0;
+            }
+        }
+
     }
 
 }

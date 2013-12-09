@@ -25,6 +25,7 @@ public class BoardLine {
     private int finalStart;
     private int finalEnd;
     private int finalGaps;
+    private final int numberSquares = 7;
 
     private final ArrayList<int[]> gapList = new ArrayList<>();
 
@@ -34,7 +35,7 @@ public class BoardLine {
     }
 
     public void addPixel(int rgb) {
-        if(numGaps > 7) return;
+        if(numGaps > numberSquares - 1) return;
         Color color = new Color(rgb);
 
         if (color.getRed() > 100 && color.getGreen() > 100 && color.getBlue() > 100) {
@@ -43,19 +44,19 @@ public class BoardLine {
                 startGaps = count;
             }
             if (gap > 10 && gap < 100) {
-                if (gap > lastGap * .5 && gap < lastGap * 1.5) {
+                if (gap > lastGap * .8 && gap < lastGap * 1.2) {
                     numGaps++;
 
-                    if (numGaps > 5 && numGaps <= 8) {
+                    if (numGaps > 5 && numGaps <= numberSquares) {
                         foundChessLine = true;
                         finalStart = startGaps;
                         finalEnd = count + 1;
                     }
                 } else {
-                    if (startGaps != count && lastGap != 0) {
-                        startGaps = -1;
+                   // if (startGaps != count && lastGap != 0) {
+                        startGaps = count - gap;
                         numGaps = 0;
-                    }
+                 //   }
                 }
                 lastGap = gap;
             } else {

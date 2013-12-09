@@ -62,9 +62,9 @@ public class ChessBoardImage {
             if (boardLine.foundLine()) {
                 left.add(boardLine.getStart());
                 right.add(boardLine.getEnd());
-                for (int x = boardLine.getStart(); x < boardLine.getEnd(); x++) {
-                    bi.setRGB(x, y, 0xFFFFFF);
-                }
+//                for (int x = boardLine.getStart(); x < boardLine.getEnd(); x++) {
+//                    bi.setRGB(x, y, 0xFFFFFF);
+//                }
             }
         }
 
@@ -74,13 +74,18 @@ public class ChessBoardImage {
         Collections.sort(bottom);
 
         if (right.size() > 4) {
-            boardDetails.setRight(right.get(right.size() / 2));
+            int quarterNum = right.size() / 4;
+            boardDetails.setRight(right.get(right.size() - quarterNum));
         }
         if (left.size() > 4) {
-            boardDetails.setLeft(left.get(left.size() / 2));
+            int quarterNum = left.size() / 4;
+            boardDetails.setLeft(left.get(quarterNum));
         }
-        boardDetails.setBottom(bottom.get(bottom.size() / 2));
-        boardDetails.setTop(top.get(top.size() / 2));
+
+        int quarterNum = bottom.size() / 4;
+        boardDetails.setBottom(bottom.get(bottom.size() - quarterNum));
+        quarterNum = top.size() / 4;
+        boardDetails.setTop(top.get(quarterNum));
 
         boardDetails.setSquareHeight((double) (boardDetails.getBottom() - boardDetails.getTop()) / 8.0);
         boardDetails.setSquareWidth((double) (boardDetails.getRight() - boardDetails.getLeft()) / 8.0);
@@ -115,7 +120,7 @@ public class ChessBoardImage {
         loc[1] = boardDetails.getSquare(x, y).y;
         loc[2] = boardDetails.getSquare(x, y).width + boardDetails.getSquare(x, y).x;
         loc[3] = boardDetails.getSquare(x, y).height + boardDetails.getSquare(x, y).y;
-  
+
         return loc;
     }
 
@@ -142,13 +147,43 @@ public class ChessBoardImage {
         return new double[]{rgbAvg[0] / size, rgbAvg[1] / size, rgbAvg[2] / size};
     }
 
-        public int getDiffSquare(int x, int y, BufferedImage bi) {
-            ArrayList<Integer> pixelRedValues = new ArrayList<>();
-            ArrayList<Integer> pixelGreenValues = new ArrayList<>();
-            ArrayList<Integer> pixelBlueValues = new ArrayList<>();
-            
-            
-            
+    public double getAvgGreyValue(int x, int y, BufferedImage bi) {
+
+        int x_s = boardDetails.getSquare(x, y).x;
+        int x_l = boardDetails.getSquare(x, y).width + boardDetails.getSquare(x, y).x;
+        int y_s = boardDetails.getSquare(x, y).y;
+        int y_l = boardDetails.getSquare(x, y).y + boardDetails.getSquare(x, y).height;
+        int size = 0;
+
+        double greyAvg = 0;
+
+        for (int x1 = x_s; x1 < x_l; x1++) {
+            for (int y1 = y_s; y1 < y_l; y1++) {
+                Color color = new Color(bi.getRGB(x1, y1));
+                int red = color.getRed();
+                int green = color.getGreen();
+                int blue = color.getBlue();
+
+                if (red >= green && red >= blue) {
+                    greyAvg += red;
+                } else if (green >= blue) {
+                    greyAvg += green;
+                } else {
+                    greyAvg += blue;
+                }
+
+                size++;
+            }
+        }
+        // System.out.println(x + " " + y + " " + greyAvg);
+        return greyAvg / size;
+    }
+
+    public int getDiffSquare(int x, int y, BufferedImage bi) {
+        ArrayList<Integer> pixelRedValues = new ArrayList<>();
+        ArrayList<Integer> pixelGreenValues = new ArrayList<>();
+        ArrayList<Integer> pixelBlueValues = new ArrayList<>();
+
         int xs = boardDetails.getSquare(x, y).x;
         int xl = boardDetails.getSquare(x, y).width + boardDetails.getSquare(x, y).x;
         int ys = boardDetails.getSquare(x, y).y;
@@ -160,22 +195,22 @@ public class ChessBoardImage {
                 pixelRedValues.add(color.getRed());
                 pixelGreenValues.add(color.getGreen());
                 pixelBlueValues.add(color.getBlue());
+                //             System.out.printf("%d, %d, %d, %d, %d, %d, %d\n", x, y, x1, y1, color.getRed(), color.getGreen(), color.getBlue());
             }
         }
-        
+
         Collections.sort(pixelRedValues);
         Collections.sort(pixelGreenValues);
         Collections.sort(pixelBlueValues);
-        
+
         int total = 0;
-        for(int i = 0 ; i < 10 ; i++){
-            total += abs(pixelRedValues.get(i + 10) - pixelRedValues.get(pixelRedValues.size() - 20 + i)) +
-                    abs(pixelGreenValues.get(i + 10) - pixelRedValues.get(pixelGreenValues.size() - 20 + i)) +
-                    abs(pixelBlueValues.get(i + 10) - pixelRedValues.get(pixelBlueValues.size() - 20 + i));
+        for (int i = 0; i < 10; i++) {
+            total += abs(pixelRedValues.get(i + 10) - pixelRedValues.get(pixelRedValues.size() - 20 + i))
+                    + abs(pixelGreenValues.get(i + 10) - pixelRedValues.get(pixelGreenValues.size() - 20 + i))
+                    + abs(pixelBlueValues.get(i + 10) - pixelRedValues.get(pixelBlueValues.size() - 20 + i));
         }
 
         return total;
     }
 
-    
 }

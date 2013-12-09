@@ -20,12 +20,23 @@ public abstract class ChessPiece {
     protected PieceLocation location;
     protected final int color;
     private boolean hasMoved = false;
+    protected String name;
 
     public ChessPiece(int color, int x, int y) throws InvalidLocationException {
         location = new PieceLocation(x, y);
         this.color = color;
+        if(color == 0){
+            name = "W";
+        }else{
+            name = "B";
+        }
+        
     }
 
+    public String getName(){
+        return name;
+    }
+    
     public void setHasMoved(){
         hasMoved = true;
     } 

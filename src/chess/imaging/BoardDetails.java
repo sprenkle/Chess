@@ -152,7 +152,7 @@ public class BoardDetails implements Serializable {
     }
  
         public Rectangle getSquare(int x, int y) {
-        Rectangle rv = new Rectangle((int) (left + (x * squareWidth) + squareWidth * .25), (int) (top + y * squareHeight + (squareHeight * .25)), (int) (squareWidth * .5), (int) (squareHeight * .5));
+        Rectangle rv = new Rectangle((int) (left + (x * squareWidth) + squareWidth * .1), (int) (top + y * squareHeight + (squareHeight * .1)), (int) (squareWidth * .8), (int) (squareHeight * .8));
 
         return rv;
     }
