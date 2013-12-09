@@ -175,7 +175,7 @@ public class DetectUtil {
     }
 
     public static void displaySquare(BoardDetails bd, int x, int y, BufferedImage bi) {
-
+        if(bd == null || bi == null) return;
         int xs = bd.getSquare(x, y).x;
         int xl = bd.getSquare(x, y).width + bd.getSquare(x, y).x;
         int ys = bd.getSquare(x, y).y;
@@ -192,6 +192,7 @@ public class DetectUtil {
     }
 
     public static void displaySquare(ChessPiece cp, BoardDetails bd, int x, int y, BufferedImage bi) {
+        if(cp == null || bd == null || bi== null) return;
         try {
             int xs = bd.getSquare(x, y).x;
             int ys = bd.getSquare(x, y).y;

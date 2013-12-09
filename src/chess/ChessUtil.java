@@ -29,7 +29,31 @@ public class ChessUtil {
         return rv;
     }
 
+    public static String convertXYtoChessMove(int fromX, int fromY, int toX, int toY){
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(numberToLetter(fromX));
+        sb.append((fromY) + 1);
+        sb.append(numberToLetter(toX));
+        sb.append((toY) + 1);
+        
+        return sb.toString();
+    }
     
+    private static String numberToLetter(int number){
+        switch(number){
+            case 0: return "h";
+            case 1: return "g";
+            case 2: return "f";
+            case 3: return "e";
+            case 4: return "d";
+            case 5: return "c";
+            case 6: return "b";
+            case 7: return "a";
+        }
+        
+        return "";
+    }
     
     public static int[] ConvertLocation(String location) throws InvalidLocationException {
         int[] rv = new int[2];

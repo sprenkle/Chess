@@ -1,6 +1,7 @@
 package chess.imaging;
 
 import chess.ChessEngine;
+import chess.ChessUtil;
 import chess.StockFishUCI;
 import chess.pieces.Board;
 import chess.pieces.ChessPiece;
@@ -32,6 +33,7 @@ public class ChessPlayDialog implements WebcamImageTransformer {
     private ChessEngine engine;
     private double[][] lastMoveValues;
     private int boardSameCount = 0;
+    private boolean madeFirstMove = false;
 
     @Override
     public BufferedImage transform(BufferedImage orig) {
@@ -107,23 +109,46 @@ public class ChessPlayDialog implements WebcamImageTransformer {
     }
 
     private void CheckForMove(ArrayList<SquareValue> diffList, BufferedImage bi) {
+        if(engine == null || engine.getBoard() == null) return;
         Board board = engine.getBoard();
         SquareValue emptySquare = null;
         ArrayList<ChessPiece>[] activePieces = board.getActivePieces();
 
         boolean matched = true;
+        SquareValue missingPiece = null;
+        ChessPiece movedPiece = null;
+        
         for (int i = 0; i < activePieces[0].size() + activePieces[1].size(); i++) {
             SquareValue sv = diffList.get(i);
             ChessPiece cp = board.getPiece(sv.x, sv.y);
 
-            if (cp != null) {
-               // DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+            if (cp != null || missingPiece == null) {
+                if(cp == null) missingPiece = sv;
+                DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
             } else {
                 matched = false;
                 boardSameCount = 0;
             }
         }
 
+        if(missingPiece != null){
+            // TODO need to add the turn color here
+            for(ChessPiece cp : activePieces[0]){
+                boolean foundPiece = false;
+                for (int i = 0; i < activePieces[0].size() + activePieces[1].size(); i++) {
+                    SquareValue sv = diffList.get(i);
+                    if(sv.x == cp.getLocation().getX() && sv.y == cp.getLocation().getY()){
+                        foundPiece = true;
+                        break;
+                    }
+                }
+                if(!foundPiece){
+                   movedPiece = cp; 
+                   engine.makeMove(ChessUtil.convertXYtoChessMove(cp.getLocation().getX(), cp.getLocation().getY(),missingPiece.x, missingPiece.y));
+                }
+            }
+        }
+        
         if (matched) {
             boardSameCount++;
         }
@@ -133,11 +158,13 @@ public class ChessPlayDialog implements WebcamImageTransformer {
                 SquareValue sv = diffList.get(i);
                 ChessPiece cp = board.getPiece(sv.x, sv.y);
 
-                DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+                if(cp != null)DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
                 boardSameCount = 0;
             }
         }
 
+        
+        
     }
 
 }
