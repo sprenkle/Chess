@@ -147,7 +147,7 @@ public class ChessBoardImage {
         return new double[]{rgbAvg[0] / size, rgbAvg[1] / size, rgbAvg[2] / size};
     }
 
-    public double getAvgGreyValue(int x, int y, BufferedImage bi) {
+        public int getAvgGreyValue2(int x, int y, BufferedImage bi) {
 
         int x_s = boardDetails.getSquare(x, y).x;
         int x_l = boardDetails.getSquare(x, y).width + boardDetails.getSquare(x, y).x;
@@ -155,7 +155,66 @@ public class ChessBoardImage {
         int y_l = boardDetails.getSquare(x, y).y + boardDetails.getSquare(x, y).height;
         int size = 0;
 
-        double greyAvg = 0;
+        int avg = 0;
+
+        double red = 0;
+        double green = 0;
+        double blue = 0;
+        
+        for (int x1 = x_s; x1 < x_l; x1++) {
+                Color color = new Color(bi.getRGB(x1, 0));
+                red += color.getRed();
+                green += color.getGreen();
+                blue += color.getBlue();
+        
+                color = new Color(bi.getRGB(x1, y_l));
+                red += color.getRed();
+                green += color.getGreen();
+                blue += color.getBlue();
+        }
+
+        
+        for (int y1 = y_s + 1; y1 < y_l - 1; y1++) {
+               Color color = new Color(bi.getRGB(0, y1));
+                red += color.getRed();
+                green += color.getGreen();
+                blue += color.getBlue();
+        
+                color = new Color(bi.getRGB(x_l, y1));
+                red += color.getRed();
+                green += color.getGreen();
+                blue += color.getBlue();
+        }
+        
+        red = red/(((x_l * 2) + (y_l * 2)));
+        green = green/(((x_l * 2) + (y_l * 2)));
+        blue = blue/(((x_l * 2) + (y_l * 2)));
+
+        double cred = 0;
+        double cgreen = 0;
+        double cblue = 0;
+        int centerX = ((x_l - x_s) / 2) - 2;
+        int centerY = ((y_l - y_s) / 2) - 2;
+        for(int x1=0;x1<4;x1++){
+            for(int y1=0;y1<4;y1++){
+                Color color = new Color(bi.getRGB(centerX + x1, centerY + y1));
+            }
+        }
+        
+        // System.out.println(x + " " + y + " " + greyAvg);
+        return avg;
+    }
+
+    
+    public int getAvgGreyValue(int x, int y, BufferedImage bi) {
+
+        int x_s = boardDetails.getSquare(x, y).x;
+        int x_l = boardDetails.getSquare(x, y).width + boardDetails.getSquare(x, y).x;
+        int y_s = boardDetails.getSquare(x, y).y;
+        int y_l = boardDetails.getSquare(x, y).y + boardDetails.getSquare(x, y).height;
+        int size = 0;
+
+        int avg = 0;
 
         for (int x1 = x_s; x1 < x_l; x1++) {
             for (int y1 = y_s; y1 < y_l; y1++) {
@@ -164,19 +223,11 @@ public class ChessBoardImage {
                 int green = color.getGreen();
                 int blue = color.getBlue();
 
-                if (red >= green && red >= blue) {
-                    greyAvg += red;
-                } else if (green >= blue) {
-                    greyAvg += green;
-                } else {
-                    greyAvg += blue;
-                }
-
-                size++;
+                avg = avg + red + green + blue;
             }
         }
         // System.out.println(x + " " + y + " " + greyAvg);
-        return greyAvg / size;
+        return avg;
     }
 
     public int getDiffSquare(int x, int y, BufferedImage bi) {

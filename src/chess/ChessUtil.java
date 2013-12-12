@@ -7,6 +7,7 @@ package chess;
 
 import chess.exceptions.InvalidLocationException;
 import chess.exceptions.InvalidMoveException;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -97,4 +98,10 @@ public class ChessUtil {
         return rv;
     }
 
+    public static void main(String[] arg){
+        Random random = new Random();
+        for(int i = 0; i < 1;i++){
+            System.out.println(random.nextInt(11));
+        }
+    }
 }
