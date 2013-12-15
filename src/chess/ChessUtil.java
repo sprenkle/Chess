@@ -43,14 +43,14 @@ public class ChessUtil {
     
     private static String numberToLetter(int number){
         switch(number){
-            case 0: return "h";
-            case 1: return "g";
-            case 2: return "f";
-            case 3: return "e";
-            case 4: return "d";
-            case 5: return "c";
-            case 6: return "b";
-            case 7: return "a";
+            case 0: return "a";
+            case 1: return "b";
+            case 2: return "c";
+            case 3: return "d";
+            case 4: return "e";
+            case 5: return "f";
+            case 6: return "g";
+            case 7: return "h";
         }
         
         return "";

@@ -55,6 +55,10 @@ public class ChessEngine {
         return board;
     }
     
+    public int getNumActivePieces(){
+        return board.getActivePieces()[0].size() + board.getActivePieces()[1].size();
+    }
+    
     public void newGame() {
 
         board.setStartingPositionBoard();
@@ -67,21 +71,21 @@ public class ChessEngine {
         try {
             if(board.makeMove(move)){
                 move(move);
-                try {
-                    fileBufferedWriter.write(move);
-                    fileBufferedWriter.newLine();
-                } catch (IOException ex) {
-                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                String bestMove = getBestMove();
-                try {
-                    fileBufferedWriter.write(bestMove);
-                    fileBufferedWriter.newLine();
-                    fileBufferedWriter.flush();
-                } catch (IOException ex) {
-                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                return bestMove;
+//                try {
+//                    fileBufferedWriter.write(move);
+//                    fileBufferedWriter.newLine();
+//                } catch (IOException ex) {
+//                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                String bestMove = getBestMove();
+//                try {
+//                    fileBufferedWriter.write(bestMove);
+//                    fileBufferedWriter.newLine();
+//                    fileBufferedWriter.flush();
+//                } catch (IOException ex) {
+//                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+                return "moveOk";
             }
         } catch (InvalidMoveException ex) {
             Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
@@ -104,7 +108,7 @@ public class ChessEngine {
         }
     }
 
-    private String getBestMove() {
+    public String getBestMove() {
         StringBuilder moveCommand = new StringBuilder();
         moveCommand.append("position startpos moves ");
 

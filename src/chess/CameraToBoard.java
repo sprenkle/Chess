@@ -12,7 +12,7 @@ package chess;
  */
 public class CameraToBoard {
     public static int getX(int x){
-        return 7 - x;
+        return 7 - x ;
     }
     
     public static int getY(int y){

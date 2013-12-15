@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -30,18 +32,23 @@ public abstract class State {
 
     private static final ChessBoardImage cbi;
     private static BoardDetails boardDetails;
-    private static final ChessEngine engine;
-    protected String name; 
+    public static final ChessEngine engine;
+    protected String name;
     private final static HashMap<String, State> states;
     //protected final int[][] squareValues = new int[8][8];
-    protected final int[][] goodSquareValues = new int[8][8];
+    protected int[][] goodSquareValues = new int[8][8];
 
     protected ArrayList<SquareValue> diffList = new ArrayList<>();
-    
+
     public final static String STARTSTATE = "STARTSTATE";
     public final static String HUMANSTATE = "HUMANSTATE";
-    public final static String ENGINESTATE = "ERRORSTATE";
-    public final static String UNKNOWNSTATE = "ERRORSTATE";
+    public final static String ENGINESTATE = "ENGINESTATE";
+    public final static String UNKNOWNSTATE = "UNKNOWNSTATE";
+    public static int turnToMove = 0;
+    public static int humanColor = 0;
+    public static int engineColor = 1;
+    protected static double emptySquareDetectionValue = -1;
+    protected static Logger stateLogger = LogManager.getLogger("State");
     
     static {
         String filename = "C:\\dev\\Chess\\Chess\\boardDetail.ser";
@@ -62,26 +69,28 @@ public abstract class State {
 
         engine = new ChessEngine(new StockFishUCI());
         engine.newGame();
-        
+
         states = new HashMap<>();
         states.put(STARTSTATE, new StartState());
         states.put(HUMANSTATE, new HumanMoveState());
         states.put(ENGINESTATE, new EngineMoveState());
         states.put(UNKNOWNSTATE, new UnknownPositionState());
+
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    
+
     public State process(BufferedImage bi) {
-        //ArrayList<SquareValue> diffList = new ArrayList<>();
         int[][] squareValues = new int[8][8];
-        
+        diffList.clear();
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
-                diffList.add(new SquareValue(x, y, cbi.getDiffSquare(x, y, bi)));
-                squareValues[x][y] = cbi.getAvgGreyValue(x, y, bi);
+                int boardX = CameraToBoard.getX(x);
+                int boardY = CameraToBoard.getY(y);
+                diffList.add(new SquareValue(boardX, boardY, cbi.getDiffSquare(x, y, bi)));
+                squareValues[boardX][boardY] = cbi.getAvgGreyValue(x, y, bi);
             }
         }
 
@@ -93,35 +102,44 @@ public abstract class State {
         });
 
         ChessPiece cp = null;
-        SquareValue sq = null;
-        
-        for (int i = 0; i < 32; i++) {
+        int nonMatchingSquares = 0;
+        int pieceTaken = 0;
+        int activePieceNumber = engine.getNumActivePieces();
+
+        for (int i = 0; i < activePieceNumber; i++) {
             SquareValue sv = diffList.get(i);
-            cp = engine.getBoard().getPiece(CameraToBoard.getX(sv.x), CameraToBoard.getY(sv.y));
-            if(cp == null){
-                sq = sv;
+            if (emptySquareDetectionValue < 0 || emptySquareDetectionValue < sv.value) {
+                cp = engine.getBoard().getPiece(sv.x, sv.y);
+                if (cp == null) {
+                    nonMatchingSquares++;
+                }
+                DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+            } else {
+                pieceTaken++;
             }
-            DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
         }
-
-//        if(isStartState(diffList)){
-//            return StartState
-//        }
-        return stateProcess(squareValues,cp, sq);
+        return stateProcess(squareValues, nonMatchingSquares, pieceTaken);
     }
-    
-    public abstract State stateProcess(int[][] squareValues,ChessPiece cp, SquareValue sq);
 
-    public State getState(String state){
-        return states.get(state);
+    public abstract State stateProcess(int[][] squareValues, int nonMatchingSquares, int pieceTaken);
+
+    public abstract void initialize();
+
+    public static State getState(String state) {
+        System.out.println(state);
+        stateLogger.info("Changing to " + state);
+        State s = states.get(state);
+        s.initialize();
+        return s;
     }
-    
+
     public static boolean isStartState(ArrayList<SquareValue> diffList) {
         for (int i = 0; i < 32; i++) {
             SquareValue sv = diffList.get(i);
             ChessPiece cp = engine.getBoard().getPiece(CameraToBoard.getX(sv.x), CameraToBoard.getY(sv.y));
-            if(cp == null)
+            if (cp == null) {
                 return false;
+            }
         }
         return true;
     }

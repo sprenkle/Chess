@@ -46,7 +46,7 @@ public class StockFishUCI implements UCIInterface {
             String line;
             while (stdin.hasNextLine()) {
                 line = stdin.nextLine();
-                System.out.println("<- " + line);
+               // System.out.println("<- " + line);
                 if (line.contains(waitForString)) {
                     return line;
                 }
@@ -62,7 +62,7 @@ public class StockFishUCI implements UCIInterface {
 
     private void send(String line) {
         try {
-            System.out.println("-> " + line);
+         //   System.out.println("-> " + line);
             bw.write(line + "\n");
             bw.flush();
         } catch (IOException ex) {

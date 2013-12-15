@@ -20,7 +20,11 @@ public class UnknownPositionState extends State {
     }
     
     @Override
-    public State stateProcess(int[][] squareValues,ChessPiece cp, SquareValue sq) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public State stateProcess(int[][] squareValues, int nonMatchingSquares, int pieceTaken) {
+        return this;
+    }
+
+    @Override
+    public void initialize() {
     }
 }
