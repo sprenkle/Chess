@@ -49,6 +49,7 @@ public abstract class State {
     public static int engineColor = 1;
     protected static double emptySquareDetectionValue = -1;
     protected static Logger stateLogger = LogManager.getLogger("State");
+    public final static int secondsForBoardCheck = 5;
     
     static {
         String filename = "C:\\dev\\Chess\\Chess\\boardDetail.ser";
@@ -113,7 +114,7 @@ public abstract class State {
                 if (cp == null) {
                     nonMatchingSquares++;
                 }
-                DetectUtil.displaySquare(cp, boardDetails, sv.x, sv.y, bi);
+                DetectUtil.displaySquare(cp, boardDetails, CameraToBoard.BoardToCameraX(sv.x), CameraToBoard.BoardToCameraY(sv.y), bi);
             } else {
                 pieceTaken++;
             }

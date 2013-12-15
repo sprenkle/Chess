@@ -36,7 +36,7 @@ public class HumanMoveState extends State {
             }
 
             
-            if (lastMatched.isBefore(DateTime.now().minusSeconds(15))) {
+            if (lastMatched.isBefore(DateTime.now().minusSeconds(secondsForBoardCheck))) {
                 stateLogger.debug(String.format("lastMatched is past 15 seconds. LastMatched=%s Now =%s",lastMatched.toString()  ,DateTime.now().toString()));
                 ArrayList<ChessPiece>[] activeList = engine.getBoard().getActivePieces();
                 ChessPiece missingPiece = null;
@@ -64,6 +64,7 @@ public class HumanMoveState extends State {
                     stateLogger.info("Human Made Invalid Move");
                     lastMatched = null;
                     stateLogger.debug("Set lastMatched to Null");
+                    return this;
                 }
                 stateLogger.info(String.format("Human made %s", move));
                 return State.getState(State.ENGINESTATE);

@@ -29,6 +29,7 @@ public class EngineMoveState extends State {
             JOptionPane.showMessageDialog(null, "Engine move is " + bestMove);
 
             System.out.println(bestMove);
+            madeDecision = true;
         }else{
              if(nonMatchingSquares == 0 && pieceTaken == 0){
                  return State.getState(State.HUMANSTATE);
