@@ -4,17 +4,21 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+        <File name="File" fileName="logs/Chess.log">
+            <PatternLayout pattern="[%d{ISO8601}] [%t] %-5p %c{6} - %msg%n"/>
+        </File>
+        <File name="FileMoves" fileName="logs/ChessMoves.log">
+            <PatternLayout pattern="%msg%n"/>
+        </File>
     </Appenders>
   
-    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="demoApplication.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-        </layout>
-    </appender>
-  
     <Loggers>
+        <Logger name="net.sprenkle.chess.moves" level="info">
+            <AppenderRef ref="FileMoves" level="info" />
+        </Logger>
         <Root level="DEBUG">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>

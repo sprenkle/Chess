@@ -26,12 +26,14 @@ public class EngineMoveState extends State {
     public State stateProcess(int[][] squareValues, int nonMatchingSquares, int pieceTaken) {
         if (!madeDecision) {
             String bestMove = State.engine.getBestMove();
+
             JOptionPane.showMessageDialog(null, "Engine move is " + bestMove);
 
             System.out.println(bestMove);
             madeDecision = true;
         }else{
              if(nonMatchingSquares == 0 && pieceTaken == 0){
+                 goodSquareValues = squareValues;
                  return State.getState(State.HUMANSTATE);
              }
         }

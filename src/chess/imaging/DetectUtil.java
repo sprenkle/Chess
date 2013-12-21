@@ -191,22 +191,22 @@ public class DetectUtil {
         }
     }
 
-    public static void displaySquare(ChessPiece cp, BoardDetails bd, int x, int y, BufferedImage bi) {
-        if(cp == null || bd == null || bi== null) return;
+    public static void displaySquare(String text, BoardDetails bd, int x, int y, BufferedImage bi) {
+        if(text == null || bd == null || bi== null) return;
         try {
             int xs = bd.getSquare(x, y).x;
             int ys = bd.getSquare(x, y).y;
 
-            displayText(bi, cp.getName(), xs, ys);
+            displayText(bi, text, xs, ys, Color.GREEN);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void displayText(BufferedImage old, String s, int x, int y) {
+    private static void displayText(BufferedImage old, String s, int x, int y, Color color) {
         Graphics2D g2d = old.createGraphics();
         g2d.drawImage(old, 0, 0, null);
-        g2d.setPaint(Color.red);
+        g2d.setPaint(color);
         g2d.setFont(new Font("Serif", Font.BOLD, 20));
         FontMetrics fm = g2d.getFontMetrics();
         g2d.drawString(s, x, y + 15);

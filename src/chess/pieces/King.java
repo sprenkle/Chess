@@ -45,7 +45,7 @@ public class King extends ChessPiece {
             }
         }
 
-        if (!getHasMoved() && (location.getX() == 2 || location.getX() == 6)
+        if (!getHasMoved() && ((location.getX() == 2 && this.getLocation().getX()== 4)|| (location.getX() == 6 && this.getLocation().getX()== 4))
                 && !board.isKingInCheck(getColor())) {
             if (location.getX() == 2) {
                 return board.getPiece(1,this.location.getY()) == null

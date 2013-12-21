@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  *
@@ -27,7 +28,8 @@ public class ChessEngine {
     private final ArrayList<ChessMove> moves = new ArrayList<>();
     private final Board board;
     private final BufferedWriter fileBufferedWriter;
-    
+    protected static org.apache.logging.log4j.Logger moveLogger = LogManager.getLogger("net.sprenkle.chess.moves");
+
     UCIInterface uci;
     
     public ChessEngine(UCIInterface uci) {
@@ -65,27 +67,17 @@ public class ChessEngine {
         moves.clear();
         uci.sendCommand("ucinewgame");
         uci.sendCommandAndWait("isready", "readyok");
+        moveLogger.info("New Game");
     }
 
     public String makeMove(String move){
         try {
             if(board.makeMove(move)){
                 move(move);
-//                try {
-//                    fileBufferedWriter.write(move);
-//                    fileBufferedWriter.newLine();
-//                } catch (IOException ex) {
-//                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                String bestMove = getBestMove();
-//                try {
-//                    fileBufferedWriter.write(bestMove);
-//                    fileBufferedWriter.newLine();
-//                    fileBufferedWriter.flush();
-//                } catch (IOException ex) {
-//                    Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+                moveLogger.info(move);
                 return "moveOk";
+            }else{
+                moveLogger.info("Error " + move);
             }
         } catch (InvalidMoveException ex) {
             Logger.getLogger(ChessEngine.class.getName()).log(Level.SEVERE, null, ex);
@@ -126,6 +118,8 @@ public class ChessEngine {
     }
     
     private void addEngineMove(String move){
+        moveLogger.info(move);
+
         if(moves.isEmpty() || !moves.get(moves.size()-1).getMove().equals(move)){
             moves.add(new ChessMove(move));
             try {

@@ -116,15 +116,12 @@ public class BoardTest {
     public void testCheckForStaleMate(){
         try {
             Board board = new Board();
-            King king = new King(Board.WHITE, 1,5);
-            board.addPiece(king);
-            Queen queen = new Queen(Board.WHITE, 3,5);
-            board.addPiece(queen);
-            King bKing = new King(Board.BLACK, 0,7);
-            board.addPiece(bKing);
+            board.addPiece(new King(Board.WHITE, 1,5));
+            board.addPiece(new Queen(Board.WHITE, 3,5));
+            board.addPiece(new King(Board.BLACK, 0,7));
             
-            assertFalse(board.isKingInCheck(Board.BLACK));
-            assertFalse(board.isAbleToMove(Board.BLACK));
+            assertFalse("Black king should not be in check",board.isKingInCheck(Board.BLACK));
+            assertFalse("Baclk king should not be able to move", board.isAbleToMove(Board.BLACK));
 
             assertFalse(board.isKingInCheck(Board.WHITE));
             assertTrue(board.isAbleToMove(Board.WHITE));

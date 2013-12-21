@@ -98,48 +98,105 @@ public class ChessEngineTest {
     }
 
     @Test
-    public void testGame1() {
+    public void testCastleWKSide() {
         ArrayList<String> uciMoveList = new ArrayList<String>();
-        uciMoveList.add("d8d7");
-        uciMoveList.add("c8d7");
-        uciMoveList.add("d7d5");
+
+        uciMoveList.add("h7h6");
+        uciMoveList.add("f7f6");
         uciMoveList.add("e7e6");
+        uciMoveList.add("d7d6");
+        uciMoveList.add("c7c6");
+        uciMoveList.add("b7b6");
+        uciMoveList.add("a7e6");
 
         ChessEngine engine = new ChessEngine(new TestUCI(uciMoveList));
         //   (new Thread(engine)).start();
         engine.newGame();
         engine.makeMove("e2e4");
-        engine.makeMove("d2d4");
-        engine.makeMove("f1b5");
-        engine.makeMove("b5d7");
+        engine.makeMove("f1e2");
+        engine.makeMove("g1f3");
+        engine.makeMove("e1g1");
+        assertEquals("WK", engine.getBoard().getPiece(6, 0).getName());
+        assertEquals("WR", engine.getBoard().getPiece(5, 0).getName());
     }
 
     @Test
-    public void testCastle() {
+    public void testCastleWQSide() {
         ArrayList<String> uciMoveList = new ArrayList<String>();
-        
+
         uciMoveList.add("h7h6");
-        uciMoveList.add("e6e5");
-        uciMoveList.add("f6e4");
-        uciMoveList.add("g8f6");
-        uciMoveList.add("d5e4");
-        uciMoveList.add("d7d5");
+        uciMoveList.add("f7f6");
+        uciMoveList.add("e7e6");
+        uciMoveList.add("d7d6");
+        uciMoveList.add("c7c6");
+        uciMoveList.add("b7b6");
+        uciMoveList.add("a7e6");
+
+        ChessEngine engine = new ChessEngine(new TestUCI(uciMoveList));
+        //   (new Thread(engine)).start();
+        engine.newGame();
+        engine.makeMove("d2d4");
+        engine.makeMove("c1e3");
+        engine.makeMove("d1d2");
+        engine.makeMove("b1c3");
+        engine.makeMove("e1c1");
+
+        assertEquals("WK", engine.getBoard().getPiece(2, 0).getName());
+        assertEquals("WR", engine.getBoard().getPiece(3, 0).getName());
+
+    }
+
+    @Test
+    public void testCastleBKSide() {
+        ArrayList<String> uciMoveList = new ArrayList<String>();
+
+        uciMoveList.add("e8g8");
+        uciMoveList.add("g8h6");
+        uciMoveList.add("f8e7");
         uciMoveList.add("e7e6");
 
         ChessEngine engine = new ChessEngine(new TestUCI(uciMoveList));
         //   (new Thread(engine)).start();
         engine.newGame();
-        engine.makeMove("e2e4");
-        engine.makeMove("f1d3");
-        engine.makeMove("g1f3");
-        engine.makeMove("d3e4");
-        engine.makeMove("b1c3");
-        assertEquals("e6e5", engine.makeMove("c3e4"));
-        assertEquals("h7h6", engine.makeMove("e1g1"));
+        engine.makeMove("a2a3");
+        engine.getBestMove();
+        engine.makeMove("b2b3");
+        engine.getBestMove();
+        engine.makeMove("c2c3");
+        engine.getBestMove();
+        engine.makeMove("d2d3");
+        engine.getBestMove();
+        assertEquals("BK", engine.getBoard().getPiece(6, 7).getName());
+        assertEquals("BR", engine.getBoard().getPiece(5, 7).getName());
     }
 
-    
-    
+    @Test
+    public void testCastleBQSide() {
+        ArrayList<String> uciMoveList = new ArrayList<String>();
+
+        uciMoveList.add("e8c8");
+        uciMoveList.add("b8c6");
+        uciMoveList.add("d8d7");
+        uciMoveList.add("c8e6");
+        uciMoveList.add("d7d6");
+
+        ChessEngine engine = new ChessEngine(new TestUCI(uciMoveList));
+        //   (new Thread(engine)).start();
+        engine.newGame();
+        engine.makeMove("a2a3");
+        engine.getBestMove();
+        engine.makeMove("b2b3");
+        engine.getBestMove();
+        engine.makeMove("c2c3");
+        engine.getBestMove();
+        engine.makeMove("d2d3");
+        engine.getBestMove();
+        engine.makeMove("e2e3");
+        engine.getBestMove();
+        assertEquals("BK", engine.getBoard().getPiece(2, 7).getName());
+        assertEquals("BR", engine.getBoard().getPiece(3, 7).getName());
+    }
+
     private class TestUCI implements UCIInterface {
 
         private final ArrayList<String> moves;

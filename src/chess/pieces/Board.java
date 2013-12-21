@@ -49,6 +49,9 @@ public class Board {
     }
 
     public ChessPiece removePiece(int x, int y) {
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            return null;
+        }
         ChessPiece rp = board[x][y];
         return removePiece(rp);
     }
@@ -67,21 +70,44 @@ public class Board {
         return activePieces;
     }
     
-    private ChessPiece capturePiece(ChessPiece rp) {
-        if (rp == null) {
-            return null;
+    public boolean isKingInCheck(int color) {
+        int opponentColor = color == 0 ? 1 : 0;
+
+        for (ChessPiece piece : activePieces[opponentColor]) {
+            if (piece.isValidMoveTo(this, king[color].getLocation())) {
+                return true;
+            }
         }
-        activePieces[rp.getColor()].remove(rp);
-        capturedPieces[rp.getColor()].add(rp);
-        
-        removePieceFromBoard(rp);
-        return null;
+        return false;
     }
 
-    private void addToActiveList(ChessPiece cp){
-        if(!activePieces[cp.getColor()].contains(cp)){
-            activePieces[cp.getColor()].add(cp);
+    public boolean isAbleToMove(int color) {
+        int opponentColor = color == 1 ? 0 : 1;
+        ArrayList<ChessPiece> tl = (ArrayList<ChessPiece>) activePieces[color].clone();
+        for (ChessPiece myCp : tl) {
+            ArrayList<PieceLocation> plArray = myCp.validMoves(this);
+            PieceLocation currentPieceLocation = myCp.getLocation();
+            removePiece(myCp);
+            for (PieceLocation pl : plArray) {
+                ChessPiece fromPiece = this.removePiece(pl.getX(), pl.getY());
+                myCp.SetLocation(pl);
+                addPiece(myCp);
+                boolean kingInCheck = isKingInCheck(color);
+                removePiece(myCp);
+                if (fromPiece != null) {
+                    addPiece(fromPiece);
+                }
+                if (!kingInCheck) {
+                    myCp.SetLocation(currentPieceLocation);
+                    addPiece(myCp);
+                    return true;
+                }
+            }
+            myCp.SetLocation(currentPieceLocation);
+            addPiece(myCp);
         }
+
+        return false;
     }
     
     public void addPiece(ChessPiece piece) {
@@ -101,7 +127,7 @@ public class Board {
             
             // Castle
             if(fromPiece.getClass() == King.class 
-                    && fromPiece.getHasMoved() 
+                    && !fromPiece.getHasMoved() 
                         && (to.getX() == 2 || to.getX() == 6)){
                 if(to.getX() == 2){
                     try {
@@ -116,7 +142,6 @@ public class Board {
                         Logger.getLogger(Board.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-                
             }
 
             if (toPiece != null) {
@@ -175,46 +200,6 @@ public class Board {
         return false;
     }
 
-    public boolean isKingInCheck(int color) {
-        int opponentColor = color == 0 ? 1 : 0;
-
-        for (ChessPiece piece : activePieces[opponentColor]) {
-            if (piece.isValidMoveTo(this, king[color].getLocation())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isAbleToMove(int color) {
-        int opponentColor = color == 1 ? 0 : 1;
-        ArrayList<ChessPiece> tl = (ArrayList<ChessPiece>) activePieces[color].clone();
-        for (ChessPiece myCp : tl) {
-            ArrayList<PieceLocation> plArray = myCp.validMoves(this);
-            PieceLocation currentPieceLocation = myCp.getLocation();
-            removePiece(myCp);
-            for (PieceLocation pl : plArray) {
-                ChessPiece fromPiece = this.removePiece(pl.getX(), pl.getY());
-                myCp.SetLocation(pl);
-                addPiece(myCp);
-                boolean kingInCheck = isKingInCheck(color);
-                removePiece(myCp);
-                if (fromPiece != null) {
-                    addPiece(fromPiece);
-                }
-                if (!kingInCheck) {
-                    myCp.SetLocation(currentPieceLocation);
-                    addPiece(myCp);
-                    return true;
-                }
-            }
-            myCp.SetLocation(currentPieceLocation);
-            addPiece(myCp);
-        }
-
-        return false;
-    }
-
     private void addPieceToBoard(ChessPiece piece) {
         board[piece.getLocation().getX()][piece.getLocation().getY()] = piece;
     }
@@ -263,16 +248,25 @@ public class Board {
             addPiece(new Pawn(BLACK, 5, 6));
             addPiece(new Pawn(BLACK, 6, 6));
             addPiece(new Pawn(BLACK, 7, 6));
-
-//            for (int x = 0; x < 8; x++) {
-//                for (int y = 0; y < 8; y++) {
-//                    if (board[x][y] != null) {
-//                        activePieces[board[x][y].returnColor()].add(board[x][y]);
-//                    }
-//                }
-//            }
         } catch (InvalidLocationException e) {
 
+        }
+    }
+    
+    private ChessPiece capturePiece(ChessPiece rp) {
+        if (rp == null) {
+            return null;
+        }
+        activePieces[rp.getColor()].remove(rp);
+        capturedPieces[rp.getColor()].add(rp);
+        
+        removePieceFromBoard(rp);
+        return null;
+    }
+
+    private void addToActiveList(ChessPiece cp){
+        if(!activePieces[cp.getColor()].contains(cp)){
+            activePieces[cp.getColor()].add(cp);
         }
     }
 }
