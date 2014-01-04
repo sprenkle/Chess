@@ -10297,3 +10297,612 @@
 [2013-12-19 19:48:27,477] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2013-12-19T19:48:27.477-06:00
 [2013-12-19 19:48:31,498] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
 [2013-12-19 19:48:33,489] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2013-12-19T19:48:33.489-06:00
+[2013-12-31 20:15:50,670] [main] INFO  net.sprenkle.chess.moves - New Game
+[2013-12-31 20:15:50,693] [main] INFO  State - Changing to STARTSTATE
+[2014-01-01 18:30:38,253] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-01 18:30:38,269] [main] INFO  State - Changing to STARTSTATE
+[2014-01-02 17:17:27,721] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-02 17:17:27,764] [main] INFO  State - Changing to STARTSTATE
+[2014-01-02 17:19:39,656] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-02 17:19:39,660] [main] INFO  State - Changing to STARTSTATE
+[2014-01-02 17:20:45,852] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-02 17:20:45,857] [main] INFO  State - Changing to STARTSTATE
+[2014-01-02 17:20:53,925] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-02 17:20:53,925] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-02 17:20:56,052] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:20:58,153] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:00,294] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:02,405] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:04,501] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:06,576] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:08,653] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:10,830] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:21:10.803-06:00
+[2014-01-02 17:21:14,981] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:21:10.803-06:00 Now =2014-01-02T17:21:14.981-06:00
+[2014-01-02 17:21:14,981] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=4 y=3
+[2014-01-02 17:21:14,999] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e2e4
+[2014-01-02 17:21:14,999] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-02 17:21:14,999] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-02 17:21:28,608] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e7e6
+[2014-01-02 17:21:48,185] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-02 17:21:50,262] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:52,410] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:54,512] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:56,588] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:21:58,657] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:00,754] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:02,833] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:04,924] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:22:04.924-06:00
+[2014-01-02 17:22:09,075] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:22:04.924-06:00 Now =2014-01-02T17:22:09.075-06:00
+[2014-01-02 17:22:09,076] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=6 y=0 movedTo x=5 y=2
+[2014-01-02 17:22:09,076] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - g1f3
+[2014-01-02 17:22:09,077] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-02 17:22:09,077] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-02 17:22:16,609] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - d7d5
+[2014-01-02 17:22:31,244] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-02 17:22:33,320] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:35,419] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:37,474] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:39,554] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:41,645] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:43,721] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:22:45,806] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:22:45.806-06:00
+[2014-01-02 17:22:50,002] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:22:45.806-06:00 Now =2014-01-02T17:22:50.002-06:00
+[2014-01-02 17:22:50,008] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=3 movedTo x=3 y=4
+[2014-01-02 17:22:50,008] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e4d5
+[2014-01-02 17:22:50,008] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-02 17:22:50,008] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-02 17:22:59,346] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e6d5
+[2014-01-02 17:23:40,259] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-02 17:23:42,255] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:44,258] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:46,257] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:48,247] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:50,169] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:52,088] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:54,012] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:55,941] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:57,951] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:23:59,944] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:01,926] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:03,904] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:05,856] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:07,849] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:09,798] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:11,772] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:13,731] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:15,723] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:17,700] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:19,681] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:21,608] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:23,547] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:25,553] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:27,529] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:29,476] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:31,462] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:33,449] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:35,454] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:37,462] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:39,447] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:41,374] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:43,432] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:45,373] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:47,363] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:49,303] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:51,284] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:53,212] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:55,129] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:57,055] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:24:59,047] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:00,981] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:03,008] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:04,997] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:06,978] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:08,984] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:10,974] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:12,886] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:14,845] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:16,828] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:18,859] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:20,845] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:22,833] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:24,832] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:26,817] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:28,753] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:30,756] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:32,752] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:34,769] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:36,783] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:38,775] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:40,833] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:42,905] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:44,863] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:46,851] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:48,864] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:50,853] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:52,864] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:54,848] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:56,851] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:25:58,840] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:00,865] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:02,862] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:04,852] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:06,801] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:08,734] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:10,661] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:12,572] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:14,483] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:16,401] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:18,331] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:20,244] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:22,188] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:24,168] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:26,086] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:28,022] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:29,939] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:31,861] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:33,789] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:35,686] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:37,598] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:39,525] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:41,452] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:43,372] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:45,293] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:47,206] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:49,132] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:51,049] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:53,000] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:54,904] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:56,841] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:26:58,740] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:00,679] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:02,587] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:04,510] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:06,458] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:08,449] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:10,434] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:12,348] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:14,267] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:16,203] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:18,183] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:20,090] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:22,041] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:23,938] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:25,910] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:27,858] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:29,815] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:31,798] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:33,743] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:35,689] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:37,629] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:39,572] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:41,559] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:43,464] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:45,395] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:47,303] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:49,216] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:51,170] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:53,209] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:55,183] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:57,153] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:27:59,064] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:00,995] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:02,976] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:04,924] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:06,866] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:08,841] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:10,770] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:12,766] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:14,809] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:16,746] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:18,714] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:20,679] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:22,630] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:24,646] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:26,646] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:28,628] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:30,634] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:32,588] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:34,540] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:36,525] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:38,501] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:40,495] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:42,519] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:44,478] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:46,447] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:48,414] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:50,457] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:52,422] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:54,369] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:56,317] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:28:58,340] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:00,325] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:02,351] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:04,322] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:06,283] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:08,215] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:10,183] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:12,168] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:14,200] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:16,171] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:18,161] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:20,186] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:22,202] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:24,364] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:26,336] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:28,320] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:30,337] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:32,358] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:34,415] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:36,514] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:38,455] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:40,421] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:42,379] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:44,300] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:46,345] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:48,298] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:50,317] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:52,373] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:54,370] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:56,459] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:29:58,396] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:00,438] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:02,425] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:04,473] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:06,451] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:08,427] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:10,452] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:12,394] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:14,408] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:16,520] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:18,550] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:20,483] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:22,501] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:24,520] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:26,447] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:28,376] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:30,319] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:32,322] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:34,385] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:36,383] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:38,331] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:40,399] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:42,514] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:44,517] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:46,568] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:48,548] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:50,467] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:52,495] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:54,520] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:56,501] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:30:58,571] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:00,628] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:02,605] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:04,597] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:06,602] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:08,647] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:10,667] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:12,613] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:14,629] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:16,616] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:18,546] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:20,637] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:22,617] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:24,549] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:26,589] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:28,686] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:30,631] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:32,715] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:34,748] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:36,768] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:31:38,910] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:31:38.910-06:00
+[2014-01-02 17:31:42,933] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:31:38.910-06:00 Now =2014-01-02T17:31:42.933-06:00
+[2014-01-02 17:31:42,934] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=3 y=0 movedTo x=4 y=1
+[2014-01-02 17:31:42,934] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - d1e2
+[2014-01-02 17:31:42,934] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-02 17:31:42,934] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-02 17:31:52,351] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - f8e7
+[2014-01-02 17:32:26,367] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-02 17:32:28,288] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:30,208] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:32,123] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:34,039] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:35,965] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:37,891] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:39,812] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:41,727] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:43,669] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:45,558] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:47,511] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:32:47.511-06:00
+[2014-01-02 17:32:51,319] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:53,260] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:55,157] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:57,076] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:32:59,001] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:32:59.001-06:00
+[2014-01-02 17:33:02,843] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:32:59.001-06:00 Now =2014-01-02T17:33:02.842-06:00
+[2014-01-02 17:33:02,843] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:02,843] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:02,843] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:02,844] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:04,766] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:04.766-06:00
+[2014-01-02 17:33:08,606] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:33:04.766-06:00 Now =2014-01-02T17:33:08.606-06:00
+[2014-01-02 17:33:08,607] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:08,607] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:08,607] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:08,607] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:10,543] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:10.543-06:00
+[2014-01-02 17:33:14,366] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:33:10.543-06:00 Now =2014-01-02T17:33:14.366-06:00
+[2014-01-02 17:33:14,367] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:14,367] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:14,367] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:14,367] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:16,281] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:16.280-06:00
+[2014-01-02 17:33:20,121] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:33:16.280-06:00 Now =2014-01-02T17:33:20.121-06:00
+[2014-01-02 17:33:20,121] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:20,121] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:20,122] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:20,122] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:22,040] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:22.040-06:00
+[2014-01-02 17:33:25,893] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:33:22.040-06:00 Now =2014-01-02T17:33:25.893-06:00
+[2014-01-02 17:33:25,893] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:25,894] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:25,894] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:25,894] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:27,812] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:27.812-06:00
+[2014-01-02 17:33:31,668] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-02T17:33:27.812-06:00 Now =2014-01-02T17:33:31.668-06:00
+[2014-01-02 17:33:31,669] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=3 y=4
+[2014-01-02 17:33:31,669] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error e2d5
+[2014-01-02 17:33:31,669] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move e2d5
+[2014-01-02 17:33:31,669] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-02 17:33:33,582] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-02T17:33:33.582-06:00
+[2014-01-02 19:10:33,433] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-02 19:10:33,439] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 11:49:25,761] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 11:49:25,773] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:04:02,734] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:04:02,739] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:04:08,763] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:04:08,768] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:04:16,832] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:04:16,833] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:04:18,968] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:21,161] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:23,235] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:25,481] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:27,744] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:29,968] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:32,050] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:04:34,165] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:27,328] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:13:27,333] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:13:35,658] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:13:35,658] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:13:37,868] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:40,033] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:42,203] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:44,431] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:46,624] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:48,758] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:50,912] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:53,058] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:13:55,209] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:10,928] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:16:10,933] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:16:19,113] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:16:19,113] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:16:21,321] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:23,465] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:25,571] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:27,701] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:29,830] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:31,984] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:34,101] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:36,217] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:38,337] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:40,479] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:42,613] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:44,733] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:46,884] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:49,048] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:51,164] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:53,300] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:55,425] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:57,529] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:16:59,753] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:01,949] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:04,083] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:06,203] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:08,324] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:10,450] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:45,082] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:17:45,087] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:17:53,250] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:17:53,250] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:17:55,429] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:57,567] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:17:59,712] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:01,820] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:04,008] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:06,299] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:08,649] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:10,873] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:13,005] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:15,135] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:17,399] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:19,595] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:21,746] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:23,933] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:26,089] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:18:28,335] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:05,600] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:20:05,605] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:20:13,677] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:20:13,677] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:20:15,968] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:18,189] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:20,421] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:22,542] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:24,641] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:26,792] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:28,976] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:31,097] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:33,228] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:35,358] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:37,482] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:39,631] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:41,731] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:43,871] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:45,972] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:48,108] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:20:50,218] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:21:43,360] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:21:43,365] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:24:22,897] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:24:22,897] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:24:25,467] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:24:27,940] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:26:35,390] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:26:35,395] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:26:43,653] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:26:43,653] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:26:45,817] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:26:48,043] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:26:50,317] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:26:52,536] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:08,713] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:27:08,719] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:27:17,360] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:27:17,361] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:27:19,903] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:22,382] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:24,907] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:27,384] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:29,884] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:32,331] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:34,793] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:37,275] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:39,738] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:42,232] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:44,739] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:47,187] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:49,658] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:52,182] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:54,795] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:57,396] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:27:59,873] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:02,345] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:04,831] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:07,306] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:41,159] [main] INFO  net.sprenkle.chess.moves - New Game
+[2014-01-04 12:28:41,163] [main] INFO  State - Changing to STARTSTATE
+[2014-01-04 12:28:49,269] [webcam-panel-scheduled-executor-1] INFO  State - Engine Plays Black
+[2014-01-04 12:28:49,270] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:28:51,464] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:53,630] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:55,744] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:28:57,865] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:00,047] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:02,235] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:04,386] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:06,624] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:29:06.597-06:00
+[2014-01-04 12:29:10,827] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:29:06.597-06:00 Now =2014-01-04T12:29:10.826-06:00
+[2014-01-04 12:29:10,827] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=1 movedTo x=4 y=3
+[2014-01-04 12:29:10,847] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e2e4
+[2014-01-04 12:29:10,847] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-04 12:29:10,847] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-04 12:29:24,024] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e7e6
+[2014-01-04 12:29:37,766] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:29:39,880] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:42,000] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:44,118] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:46,243] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:48,353] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:50,488] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:52,599] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:54,732] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:56,871] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:29:59,032] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:29:59.032-06:00
+[2014-01-04 12:30:03,296] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:29:59.032-06:00 Now =2014-01-04T12:30:03.296-06:00
+[2014-01-04 12:30:03,296] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=3 y=1 movedTo x=3 y=3
+[2014-01-04 12:30:03,296] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - d2d4
+[2014-01-04 12:30:03,297] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-04 12:30:03,297] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-04 12:30:24,115] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - d7d5
+[2014-01-04 12:30:45,385] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:30:47,490] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:30:49,616] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:30:51,727] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:30:53,858] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:30:55,966] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:30:58,099] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:00,208] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:02,338] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:04,463] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:06,588] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:08,694] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:10,873] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:31:10.873-06:00
+[2014-01-04 12:31:15,283] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:31:10.873-06:00 Now =2014-01-04T12:31:15.283-06:00
+[2014-01-04 12:31:15,307] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=4 y=3 movedTo x=3 y=4
+[2014-01-04 12:31:15,307] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e4d5
+[2014-01-04 12:31:15,307] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-04 12:31:15,307] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-04 12:31:25,768] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - e6d5
+[2014-01-04 12:31:47,257] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:31:49,256] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:51,254] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:53,272] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:55,278] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:57,270] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:31:59,279] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:01,278] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:03,256] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:05,255] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:07,269] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:09,250] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:11,228] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:13,223] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:15,253] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:17,322] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:19,380] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:21,391] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:23,381] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:32:23.381-06:00
+[2014-01-04 12:32:27,383] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:32:23.381-06:00 Now =2014-01-04T12:32:27.383-06:00
+[2014-01-04 12:32:27,383] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=1 y=0 movedTo x=2 y=2
+[2014-01-04 12:32:27,384] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - b1c3
+[2014-01-04 12:32:27,384] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-04 12:32:27,384] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-04 12:32:36,797] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - g8f6
+[2014-01-04 12:32:55,513] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:32:57,522] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:32:59,512] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:01,515] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:03,520] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:05,507] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:33:05.507-06:00
+[2014-01-04 12:33:09,507] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:33:05.507-06:00 Now =2014-01-04T12:33:09.507-06:00
+[2014-01-04 12:33:09,507] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=2 y=0 movedTo x=5 y=3
+[2014-01-04 12:33:09,507] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - c1f4
+[2014-01-04 12:33:09,508] [webcam-panel-scheduled-executor-1] INFO  State - Human made moveOk
+[2014-01-04 12:33:09,508] [webcam-panel-scheduled-executor-1] INFO  State - Changing to ENGINESTATE
+[2014-01-04 12:33:17,551] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - f8d6
+[2014-01-04 12:33:34,000] [webcam-panel-scheduled-executor-1] INFO  State - Changing to HUMANSTATE
+[2014-01-04 12:33:36,011] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:38,001] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:40,040] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:42,040] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:44,045] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:33:44.045-06:00
+[2014-01-04 12:33:48,045] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:33:44.045-06:00 Now =2014-01-04T12:33:48.045-06:00
+[2014-01-04 12:33:48,046] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=5 y=3 movedTo x=3 y=4
+[2014-01-04 12:33:48,046] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error f4d5
+[2014-01-04 12:33:48,046] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move f4d5
+[2014-01-04 12:33:48,046] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:50,048] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:33:50.048-06:00
+[2014-01-04 12:33:54,046] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:33:50.048-06:00 Now =2014-01-04T12:33:54.046-06:00
+[2014-01-04 12:33:54,047] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=5 y=3 movedTo x=3 y=4
+[2014-01-04 12:33:54,047] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error f4d5
+[2014-01-04 12:33:54,047] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move f4d5
+[2014-01-04 12:33:54,047] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null
+[2014-01-04 12:33:56,044] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to 2014-01-04T12:33:56.044-06:00
+[2014-01-04 12:34:00,047] [webcam-panel-scheduled-executor-1] DEBUG State - lastMatched is past 3 seconds. LastMatched=2014-01-04T12:33:56.044-06:00 Now =2014-01-04T12:34:00.047-06:00
+[2014-01-04 12:34:00,047] [webcam-panel-scheduled-executor-1] DEBUG State - missingPiece x=5 y=3 movedTo x=3 y=4
+[2014-01-04 12:34:00,048] [webcam-panel-scheduled-executor-1] INFO  net.sprenkle.chess.moves - Error f4d5
+[2014-01-04 12:34:00,048] [webcam-panel-scheduled-executor-1] INFO  State - Human Made Invalid Move f4d5
+[2014-01-04 12:34:00,048] [webcam-panel-scheduled-executor-1] DEBUG State - Set lastMatched to Null

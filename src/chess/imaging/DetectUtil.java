@@ -25,6 +25,7 @@ import boofcv.struct.image.ImageFloat32;
 import boofcv.struct.image.ImageSInt16;
 import boofcv.struct.image.ImageSingleBand;
 import boofcv.struct.image.ImageUInt8;
+import chess.pieces.Board;
 import chess.pieces.ChessPiece;
 import georegression.struct.line.LineParametric2D_F32;
 import georegression.struct.line.LineSegment2D_F32;
@@ -197,17 +198,41 @@ public class DetectUtil {
             int xs = bd.getSquare(x, y).x;
             int ys = bd.getSquare(x, y).y;
 
-            displayText(bi, text, xs, ys, Color.GREEN);
+            displayText(bi, text, xs, ys, Color.GREEN, 20);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void displayText(BufferedImage old, String s, int x, int y, Color color) {
+    public static void debugSquare(BoardDetails bd, int x, int y, Board b, ArrayList<SquareValue> squareValues, BufferedImage bi){
+       SquareValue foundSquare = null;
+       int rank = -1;
+       for(int i = 0 ;i < squareValues.size(); i++){
+           SquareValue sv = squareValues.get(i);
+           if(sv.x == x && sv.y == y){
+               foundSquare = sv;
+               break;
+           }
+       }
+       
+            int xs = bd.getSquare(x, y).x;
+            int ys = bd.getSquare(x, y).y;
+
+       
+       
+       ChessPiece cp = b.getPiece(x, y);
+       if(cp != null){
+           displayText(bi, cp.getName(), xs, ys, Color.GREEN, 10);
+       }
+       
+    }
+    
+    
+    private static void displayText(BufferedImage old, String s, int x, int y, Color color, int size) {
         Graphics2D g2d = old.createGraphics();
         g2d.drawImage(old, 0, 0, null);
         g2d.setPaint(color);
-        g2d.setFont(new Font("Serif", Font.BOLD, 20));
+        g2d.setFont(new Font("Serif", Font.BOLD, size));
         FontMetrics fm = g2d.getFontMetrics();
         g2d.drawString(s, x, y + 15);
         g2d.dispose();

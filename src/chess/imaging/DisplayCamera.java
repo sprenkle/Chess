@@ -44,6 +44,7 @@ import static java.lang.Math.abs;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.opencv.core.Mat;
 
 public class DisplayCamera implements WebcamImageTransformer {
 
@@ -59,45 +60,9 @@ public class DisplayCamera implements WebcamImageTransformer {
         WritableRaster raster = orig.copyData(null);
         BufferedImage bi = new BufferedImage(cm, raster, isAlphaPremultiplied, null);
 
-        ImageUInt8 gray = ConvertBufferedImage.convertFrom(bi, (ImageUInt8) null);
-      
-        ImageUInt8 edgeImage = new ImageUInt8(gray.width, gray.height);
-        
-        ImageFloat32 img = ConvertBufferedImage.convertFrom(bi, (ImageFloat32) null);
-
-        // Create a canny edge detector which will dynamically compute the threshold based on maximum edge intensity
-        // It has also been configured to save the trace as a graph.  This is the graph created while performing
-        // hysteresis thresholding.                                          2
-        CannyEdge<ImageFloat32, ImageFloat32> canny = FactoryEdgeDetectors.canny(2, true, true, ImageFloat32.class, ImageFloat32.class);
-
-        // The edge image is actually an optional parameter.  If you don't need it just pass in null
-        canny.process(img, 0.1f, 0.9f, edgeImage);
-        
-
-        // First get the contour created by canny
-        List<EdgeContour> edgeContours = canny.getContours();
-        // The 'edgeContours' is a tree graph that can be difficult to process.  An alternative is to extract
-        // the contours from the binary image, which will produce a single loop for each connected cluster of pixels.
-        // Note that you are only interested in external contours.
-        List<Contour> contours = BinaryImageOps.contour(edgeImage, 8, null);
-
-        // display the results
-        BufferedImage visualBinary = VisualizeBinaryData.renderBinary(edgeImage, null);
-
-//        if (!savedBoard) {
-            cbi = new ChessBoardImage();
-
-            cbi.CalcCorners(visualBinary);
-//        }
-
-        for (int x = 0; x < 8; x++) {
-            for (int y = 0; y < 8; y++) {
-               DetectUtil.displaySquare(cbi.getBoardDetails(), x, y, bi);
-            }
-        }
 
 
-        return visualBinary;
+        return bi;
     }
 
     public DisplayCamera() {
@@ -144,5 +109,39 @@ public class DisplayCamera implements WebcamImageTransformer {
 // 
 //                return ;
 //	}
+    /**  
+    * Converts/writes a Mat into a BufferedImage.  
+    *  
+    * @param matrix Mat of type CV_8UC3 or CV_8UC1  
+    * @return BufferedImage of type TYPE_3BYTE_BGR or TYPE_BYTE_GRAY  
+    */  
+   public static BufferedImage matToBufferedImage(Mat matrix) {  
+     int cols = matrix.cols();  
+     int rows = matrix.rows();  
+     int elemSize = (int)matrix.elemSize();  
+     byte[] data = new byte[cols * rows * elemSize];  
+     int type;  
+     matrix.get(0, 0, data);  
+     switch (matrix.channels()) {  
+       case 1:  
+         type = BufferedImage.TYPE_BYTE_GRAY;  
+         break;  
+       case 3:  
+         type = BufferedImage.TYPE_3BYTE_BGR;  
+         // bgr to rgb  
+         byte b;  
+         for(int i=0; i<data.length; i=i+3) {  
+           b = data[i];  
+           data[i] = data[i+2];  
+           data[i+2] = b;  
+         }  
+         break;  
+       default:  
+         return null;  
+     }  
+     BufferedImage image2 = new BufferedImage(cols, rows, type);  
+     image2.getRaster().setDataElements(0, 0, cols, rows, data);  
+     return image2;  
+   }  
 
 }

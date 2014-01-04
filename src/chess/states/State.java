@@ -7,11 +7,13 @@ package chess.states;
 
 import chess.CameraToBoard;
 import chess.ChessEngine;
+import chess.ImageUtil;
 import chess.StockFishUCI;
 import chess.imaging.BoardDetails;
 import chess.imaging.ChessBoardImage;
 import chess.imaging.DetectUtil;
 import chess.imaging.SquareValue;
+import chess.pieces.Board;
 import chess.pieces.ChessPiece;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
@@ -107,6 +109,11 @@ public abstract class State {
         int pieceTaken = 0;
         int activePieceNumber = engine.getNumActivePieces();
 
+        for(int x = 0 ; x < 8; x++){
+            for(int y = 0 ; y < 8 ; y++){
+                DetectUtil.debugSquare(boardDetails,x, y, engine.getBoard(), diffList, bi);
+            }
+        }
         for (int i = 0; i < activePieceNumber; i++) {
             SquareValue sv = diffList.get(i);
             if (emptySquareDetectionValue < 0 || emptySquareDetectionValue < sv.value) {
@@ -114,9 +121,9 @@ public abstract class State {
                 if (cp == null) {
                     nonMatchingSquares++;
                 }
-                DetectUtil.displaySquare(cp != null ? cp.getName() : "", boardDetails, CameraToBoard.BoardToCameraX(sv.x), CameraToBoard.BoardToCameraY(sv.y), bi);
+             //   DetectUtil.displaySquare(cp != null ? cp.getName() : "", boardDetails, CameraToBoard.BoardToCameraX(sv.x), CameraToBoard.BoardToCameraY(sv.y), bi);
             } else {
-                DetectUtil.displaySquare("?", boardDetails, CameraToBoard.BoardToCameraX(sv.x), CameraToBoard.BoardToCameraY(sv.y), bi);
+            //    DetectUtil.displaySquare("?", boardDetails, CameraToBoard.BoardToCameraX(sv.x), CameraToBoard.BoardToCameraY(sv.y), bi);
                 pieceTaken++;
             }
         }
